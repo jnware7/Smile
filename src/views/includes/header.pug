@@ -1,0 +1,13 @@
+.d-flex.justify-content-end
+  .mr-auto.p-2 
+   h1 #{heading}
+  if isloggedIn
+    .p-2 Logout
+      a(href="")
+    .p-2 Profile
+      a(href="")
+  else
+    .p-2 Signup
+      a(href="")
+    .p-2 Login
+      a(href="")
