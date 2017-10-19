@@ -1,13 +1,14 @@
 .d-flex.justify-content-end
   .mr-auto.p-2 
-   h1 #{heading}
+   h1 
+    a(href="/") #{heading}
   if isloggedIn
-    .p-2 Logout
-      a(href="")
-    .p-2 Profile
-      a(href="")
+    .p-2 
+      a(href="/logout") Logout
+    .p-2 
+      a(href="/profile") Profile
   else
-    .p-2 Signup
-      a(href="")
-    .p-2 Login
-      a(href="")
+    .p-2 
+    a(href="/auth/signup") Signup 
+    .p-2 
+    a(href="/auth/login") Login

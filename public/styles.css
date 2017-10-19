@@ -1,0 +1,40 @@
+body{
+  margin-left: 10%;
+  margin-right:10%;
+  margin-top:2%;
+  margin-bottom:2%;
+}
+
+i.fa.fa-heart{
+  color:black;
+  font-size: 20px;
+  padding-left: 2%;
+  opacity:0.1;
+}
+i.fa.fa-heart:active{
+  color:red;
+  opacity:1;
+}
+i.fa.fa-heart:hover{
+  color:red;
+  opacity:1;
+}
+
+
+.home-quote{
+  margin-top: 8%;
+  margin-bottom: 18%;
+  font-size: 6em;
+  padding:5%;
+}
+.home-author{
+  font-size: 30px;
+}
+.copyright{
+  padding:20px;
+}
+.signup-form{
+  width:35%;
+  margin-top:5%;
+  margin-bottom:10%;
+}
