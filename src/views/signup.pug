@@ -2,7 +2,7 @@ extends layout
 
 block content
   .d-flex.justify-content-center.align-item-center 
-  form(action='/auth/signup', method='POST').signup-form
+  form(action='/auth/new/signup', method='POST').signup-form
     .form-group
       label(for='exampleInputPassword1') Username
       input#exampleInputPassword1.form-control(type='text', placeholder='Username', name='name')

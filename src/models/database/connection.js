@@ -5,6 +5,7 @@ const config = {
   host: process.env.HOST,
   port:process.env.PORT,
 };
+
 const db = pgp(config);
 
 module.exports = db

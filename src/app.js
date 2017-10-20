@@ -13,6 +13,7 @@ app.set('views', __dirname + '/views');
 
 app.locals.heading = 'Smile';
 
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
@@ -29,9 +30,11 @@ app.use((req, res, next) => {
   console.log(req.session)
   next()
 })
-app.use(middlewares.addUserToRequest);
 
 app.use('/', routes)
+
+app.use(middlewares.addUserToRequest);
+
 
 const port = process.env.PORT1 || 3000
 

@@ -3,20 +3,21 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const create = (name,email, password) => {
-  return bcrypt.compare(password, hash)
-  .then((hash) => {
-    return db.query('INSERT INTO users (name, email, password) VALUES($1,$2, $3) RETURNING *'
-  ,[name, email ,hash])
+  return bcrypt.hash(password, saltRounds)
+  .then(hash => {
+    db.query('INSERT INTO users (name, email, password) VALUES($1, $2, $3)'
+  ,[name, email , hash])
 }).catch(error => {
-  console.error({message:"Error occured while executing users.create", arguments: arguments});
+  console.error({message:"Error occured while executing auth.create", arguments: arguments});
   throw error
   })
 }
 
 const findByEmail = (email) => {
-  return db.any('SELECT * FROM users WHERE email =$1',[email])
+  return db.oneOrNone('SELECT * FROM users WHERE email = $1',[email])
+  .then(user => console.log(user))
   .catch(error => {
-    console.error({message:"Error occured while executing users.findByEmail", arguments: arguments});
+    console.error({message:"Error occured while executing auth.findByEmail", arguments: arguments});
     throw error
     })
 }
@@ -25,3 +26,8 @@ const findByEmail = (email) => {
 //   console.error({message:"Error occured while executing users.create", arguments: arguments});
 //   throw error
 //   })
+
+module.exports = {
+  create,
+  findByEmail
+}
