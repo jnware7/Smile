@@ -1,3 +1,4 @@
+const env = require('dotenv').config();//must be at the top of your project
 const express = require('express');
 const app = require('express')()
 const methodOverride = require('method-override');
@@ -5,8 +6,9 @@ const bodyParser = require('body-parser');
 const routes = require('./controllers/routes');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const env = require('dotenv').config();
 const middlewares = require('./controllers/middlewares')
+
+// console.log("env: ", env)
 
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
@@ -27,7 +29,7 @@ app.use(session({
 
 app.use((req, res, next) => {
   req.session.name ='sessionSmile'
-  console.log(req.session)
+  // console.log(req.session)
   next()
 })
 

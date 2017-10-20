@@ -7,8 +7,8 @@ router.get('/signup', (req, res) => {
 });
 
 const createSession = (session, user)=> {
-  console.log('made user', user)
-  session.user = user
+  console.log('made user', user[0])
+  session.user = user[0]
 };
 
 router.use((req, res, next) => {
@@ -21,11 +21,13 @@ router.use((req, res, next) => {
 });
 
 router.post('/new/signup',(req, res) => {
-  const user = req.body
-  auth.create(user.name, user.email, user.password)
+  const {name, email, password} = req.body
+  console.log('=====', name, email, password)
+  auth.create(name, email, password)
     .then(createdUser => {
-      console.log('where is a user in this insanity???', createdUser)
+      console.log('createdUser ====> ', createdUser)
       createSession(req.session, createdUser);
+      console.log('userInSession ====> ', req.session.user)
       res.redirect('/profile')
     })
     .catch(error => {

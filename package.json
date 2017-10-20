@@ -29,6 +29,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
+    "particlesjs": "^2.0.2",
     "pg-promise": "^7.0.1",
     "pug": "^2.0.0-rc.4"
   },

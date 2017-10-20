@@ -1,10 +1,10 @@
  CREATE TABLE users(
    id SERIAL PRIMARY KEY,
-   name VARCHAR(255) UNIQUE NOT NULL,
+   name VARCHAR(255) NOT NULL,
    password VARCHAR(255) NOT NULL,
-   email VARCHAR(255)UNIQUE NOT NULL,
+   email VARCHAR(255) UNIQUE NOT NULL,
    image VARCHAR(255) DEFAULT 'http://via.placeholder.com/250x250',
-   role VARCHAR(255) DEFAULT user
+   role VARCHAR(255) DEFAULT 'user'
  );
 
  CREATE TABLE quote(
