@@ -29,7 +29,16 @@ app.use((req, res, next) => {
   req.session.name ='sessionSmile'
   next()
 })
+app.use((req, res, next) => {
 
+  if(typeof req.session.user === 'object' && Object.keys(req.session.user).length !== 0) {
+    res.locals.isLoggedIn = true
+  } else {
+    res.locals.isLoggedIn = false
+  }
+  console.log('isLoggedIn',res.locals.isLoggedIn);
+  next()
+});
 app.use(middlewares.addUserToRequest);
 
 app.use('/', routes)

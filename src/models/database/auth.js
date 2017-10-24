@@ -32,7 +32,7 @@ const findByEmail = (email) => {
     throw error
     })
 }
-findByEmail('true@me.com')
+
 
 // .catch(error => {
 //   console.error({message:"Error occured while executing users.create", arguments: arguments});

@@ -68,6 +68,20 @@ console.log("new user sfsadfdasf", req.session);
   });
 })
 
+router.get('/logout', (req,res,next) => {
+  if(req.session.user) {
+    req.session.user = ''
+    req.user= ''
+    res.redirect('/')
+    // req.session.destroy((error) => {
+    //   if(error){
+    //     return next(error);
+    //   }else{
+    //     return res.redirect('/')
+    //   }
+    // })
+  }
+})
 
 function verifyPasswordWithEmail(newUser, plainPassword) {
   return new Promise((resolve, reject) => {
