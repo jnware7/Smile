@@ -13,7 +13,7 @@ const create = (name,email, password) => {
       ,[name, email , hash])
 })
 .then(result => {
-  console.log("database result: ", result)
+  // console.log("database result: ", result)
   return result
 })
 .catch(error => {
@@ -26,12 +26,13 @@ const create = (name,email, password) => {
 
 const findByEmail = (email) => {
   return db.oneOrNone('SELECT * FROM users WHERE email = $1',[email])
-  .then(user => console.log(user))
+  .then(user => user)
   .catch(error => {
     console.error({message:"Error occured while executing auth.findByEmail", arguments: arguments});
     throw error
     })
 }
+findByEmail('true@me.com')
 
 // .catch(error => {
 //   console.error({message:"Error occured while executing users.create", arguments: arguments});
