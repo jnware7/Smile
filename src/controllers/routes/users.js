@@ -3,16 +3,29 @@ const users = require('../../models/users')
 const quotes = require('../../models/quotes')
 
 router.get('/profile', (req, res) => {
-  console.log("locls var", res.locals.isLoggedIn)
- const user = req.session.user
- console.log('(2) user333====>', user);
-  const name = req.user.name
-  const userImage = req.user.image
-console.log('name', name);
-  res.render('profile',{name:name, image: userImage})
-});
+const user = req.session.user
+const users_id = req.session.user.id
+const author = req.body.author
+const quote = req.body.quote
 
+Promise.all([
+  quotes.getByUserId(users_id),
+  quotes.getUserFav(users_id)
+])
+.then((userQuotes)=>{
+  console.log('asdfasef aew=========>', userQuotes);
+  return userQuotes.reduce( (a, b) => a.concat(b),[])
+})
+.then((allUserQuotes)=>{
+  console.log('step 2222===>', allUserQuotes);
+  shuffleQuotes(allUserQuotes)
 
+  let quote = allUserQuotes[0].quote
+  let author = allUserQuotes[0].author
+
+ res.render('profile',{name: user.name, image: user.image, quote:quote, author:author})
+})
+})
 var shuffleQuotes = function(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
