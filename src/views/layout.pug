@@ -2,15 +2,15 @@ doctype html
 html(lang="en")
   head
     block scripts
-      
-      
-      script(src='/scripts.js')
       <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet", href="/styles.css">  
+      <link rel="stylesheet" href="/styles.css">  
   body
     include includes/header.pug
     block content
     include includes/footer.pug
     
-    
+    block scripts
+      script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+      script(src='/scripts.js')
