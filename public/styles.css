@@ -32,15 +32,15 @@ i.fa.fa-heart:hover{
   padding:5%;
 }
 
-  @-webkit-keyframes home-quote { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes home-quote { from { opacity:0; } to { opacity:1; } }
-@keyframes home-quote { from { opacity:0; } to { opacity:1; } }
+  @-webkit-keyframes profile-quote { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes profile-quote { from { opacity:0; } to { opacity:1; } }
+@keyframes profile-quote { from { opacity:0; } to { opacity:1; } }
 
-.home-quote {
+.profile-quote {
  opacity:0;  /* make things invisible upon start */
- -webkit-animation:home-quote ease-in 1;  /* call our keyframe named home-quote, use animattion ease-in and repeat it only 1 time */
- -moz-animation:home-quote ease-in 1;
- animation:home-quote ease-in 1;
+ -webkit-animation:profile-quote ease-in 1;  /* call our keyframe named profile-quote, use animattion ease-in and repeat it only 1 time */
+ -moz-animation:profile-quote ease-in 1;
+ animation:profile-quote ease-in 1;
 
  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
  -moz-animation-fill-mode:forwards;
@@ -51,7 +51,7 @@ i.fa.fa-heart:hover{
  animation-duration:1s;
 }
 
-.home-quote {
+.profile-quote {
 -webkit-animation-delay: 0.7s;
 -moz-animation-delay: 0.7s;
 animation-delay: 0.7s;

@@ -9,13 +9,17 @@ block content
           button.close(type='button', data-dismiss='modal', aria-label='Close')
             span(aria-hidden='true') ×
         .modal-body
-          form.smile-form
+          form(action='/users/new/quote', method='POST').smile-form
+            .smile-form-group
+              label(for='author') Quote Author
+              input#smile-input.form-control(type='text', placeholder='Author', name='author')
             .smile-form-group
               label(for='smile-textarea') Maybe a quote...
-              textarea#textarea.form-control(rows='10')
+              textarea#textarea.form-control(rows='10',name='quote')
+              br
+            button.btn.btn-primary(type='submit', ) Submit
         .modal-footer
-          button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-          button.btn.btn-primary(type='button') Submit
+        
 
   .d-flex.flex-column
    img.user-img-profile.img-fluid(src='https://cdn6.bigcommerce.com/s-491hew/products/1260/images/2288/36fluorescentblue__68350.1479377501.500.525.jpg?c=2', alt='Responsive image',style=" height:350px;")
@@ -24,9 +28,9 @@ block content
    h2.user-welcome Smile, #{name} 
    
   div.d-flex.justify-content-center
-    h1.profile-quote.d-flex-justify-content "The way you tell your story to yourself matters." 
+    h1.profile-quote.d-flex-justify-content #{quote} 
      .d-flex.justify-content-center.align-item-center
-      p.home-author by Amy Cuddy
+      p.home-author by #{author}
       i.fa.fa-heart(aria-hidden='true')   
       br  
   div.d-flex.justify-content-center

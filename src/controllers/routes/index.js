@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const auth = require('./auth');
 const users = require('./users');
+const quotes = require('./quotes');
 
 router.get('/', (req, res) => {
   res.render('home')
@@ -15,6 +16,7 @@ router.get('/', (req, res) => {
 //   console.log('isLoggedIn',res.locals.isLoggedIn);
 //   next()
 // });
+router.use('/quotes',quotes)
 router.use('/auth', auth)
 router.use('/users',users)
 module.exports = router
