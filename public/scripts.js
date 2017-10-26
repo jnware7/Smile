@@ -1,3 +1,18 @@
+$(".user-img").hide().delay(500)
+$(".user-img").slideDown( "slow" )
+
+$(".home-quote").delay(500).fadeOut(5000);
+
+$(".user-welcome").hide()
+$(".user-welcome").delay(500).fadeIn(4000);
+
+$(".home-quote2").hide()
+$(".home-author2").hide()
+
+$(".home-quote2").delay(5000).fadeIn(5000);
+$(".home-author2").delay(5000).fadeIn(5000);
+
+
 
 // Bouncing Balls. By Rob Glazebrook
 // The balls are randomized in size, color, opacity, and bounce direction. They'll bounce off the walls of their container and generally make a rather pretty show of things.

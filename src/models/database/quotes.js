@@ -12,7 +12,7 @@ const getByUserId = (users_id) => {
 }
 
 const getAll = () => {
-  return db.any(`SELECT * FROM quote`,[])
+  return db.any(`SELECT * FROM quote`)
 }
 
 const getUserFav = (users_id) => {

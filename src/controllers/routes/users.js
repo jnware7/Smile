@@ -2,6 +2,7 @@ const router = require('express').Router();
 const users = require('../../models/users')
 const quotes = require('../../models/quotes')
 
+
 router.get('/profile', (req, res) => {
 const user = req.session.user
 const users_id = req.session.user.id
