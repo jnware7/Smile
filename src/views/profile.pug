@@ -27,7 +27,9 @@ block content
   
     img.user-img(src=`${image}`, alt='') 
     h2.user-welcome Smile, #{name} 
-  div.d-flex.justify-content-center
+
+    .loader.d-flex.justify-content-center Loading...
+  div.quote-div.d-flex.justify-content-center
     h1.profile-quote.d-flex-justify-content #{quote} 
      .d-flex.justify-content-center.align-item-center
       p.home-author by #{author}
@@ -35,6 +37,23 @@ block content
       br  
   div.d-flex.justify-content-center
     button.add-smile.btn.btn-outline-primary(type='button', data-toggle='modal', data-target='#myModal') Add thing that make you Smile
-      
-
-    
+  button.add-smile.btn.btn-outline-primary(type='button', data-toggle='modal', data-target='#myModal2') Edit Profile 
+    i.fa.fa-pencil(aria-hidden='true')   
+  div(class='modal', id='myModal2')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h5#exampleModalLabel.modal-title Edit User Profile
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+        .modal-body
+          form(action='/users/profile/new?_method=PUT', method='POST').smile-form
+            .smile-form-group
+              label(for='author') UserName
+              input#smile-input.form-control(type='text', placeholder='UserName', name='name')
+            .smile-form-group
+              label(for='smile-textarea') Image URL
+                input#smile-input.form-control(type='text', placeholder='URL', name='image')
+              br
+            button.btn.btn-primary(type='submit', ) Submit
+        .modal-footer

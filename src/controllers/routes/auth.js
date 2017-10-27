@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const auth = require('../../models/auth')
 const bcrypt = require('bcrypt');
+const quotes = require('../../models/quotes')
 
 const createSession = (session, user)=> {
   console.log('made user', user[0])
@@ -11,6 +12,10 @@ const createSession = (session, user)=> {
 
 router.get('/signup', (req, res) => {
   res.render('signup')
+  .catch(error => {
+  console.error({ message:error});
+  // throw error
+  });
 });
 
 
@@ -35,7 +40,7 @@ router.post('/new/signup',(req, res) => {
       res.redirect('/users/profile')
     })
     .catch(error => {
-      console.error({message:"Error occured while executing /signup", arguments: arguments});
+      console.error({message: error, arguments: arguments});
       throw error
     })
   })

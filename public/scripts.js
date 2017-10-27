@@ -2,6 +2,9 @@ $(".user-img").hide().delay(500)
 $(".user-img").slideDown( "slow" )
 
 $(".home-quote").delay(500).fadeOut(5000);
+$(".loader").delay(10).fadeOut(2000)
+
+
 
 $(".user-welcome").hide()
 $(".user-welcome").delay(500).fadeIn(4000);
@@ -9,8 +12,8 @@ $(".user-welcome").delay(500).fadeIn(4000);
 $(".home-quote2").hide()
 $(".home-author2").hide()
 
-$(".home-quote2").delay(5000).fadeIn(5000);
-$(".home-author2").delay(5000).fadeIn(5000);
+$(".home-quote2").delay(6000).fadeIn(5000);
+$(".home-author2").delay(6000).fadeIn(5000);
 
 
 
