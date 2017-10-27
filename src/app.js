@@ -43,8 +43,6 @@ app.use(middlewares.addUserToRequest);
 
 app.use('/', routes)
 
-
-
 const port = process.env.PORT1 || 3000
 
 app.listen(port,() => {

@@ -6,6 +6,6 @@ block content
   h1.home-quote2 "#{quote}"
    .d-flex.justify-content-center.align-item-center 
     p.home-author2 by #{author}
-      a(href=`/likes/${quote_id}`)
-        i.fa.fa-heart#heart-like(aria-hidden='true')
+      span(id="quote-id" style="display: none;")=quote_id
+      i.fa.fa-heart#heart-like(aria-hidden='true')
       

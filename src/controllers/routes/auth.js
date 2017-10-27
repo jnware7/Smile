@@ -8,8 +8,6 @@ const createSession = (session, user)=> {
   session.user = user[0]
 };
 
-
-
 router.get('/signup', (req, res) => {
   res.render('signup')
   .catch(error => {
@@ -62,7 +60,7 @@ router.post('/new/login', (req,res) => {
   .then(isUser => {
     console.log("isUser", isUser)
     if(!isUser) res.render('signup')
-    createSession(req.session, isUser)
+    // createSession(req.session, isUser)
     req.session.user = isUser
 console.log("new user sfsadfdasf", req.session);
     res.redirect('/users/profile')

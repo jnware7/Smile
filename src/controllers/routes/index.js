@@ -26,6 +26,7 @@ var shuffleQuotes = function(array) {
 router.get('/', (req, res) => {
    quote.getAll()
   .then((allQuotes) => {
+  
     shuffleQuotes(allQuotes)
     res.render('home',{quote:allQuotes[0].quote, author:allQuotes[0].author, quote_id: allQuotes[0].id})
   })
@@ -40,7 +41,9 @@ router.get('/', (req, res) => {
 //   console.log('isLoggedIn',res.locals.isLoggedIn);
 //   next()
 // });
-router.use('/quotes',quotes)
+
+router.use('/quotes', quotes)
 router.use('/auth', auth)
-router.use('/users',users)
+router.use('/users', users)
+
 module.exports = router
