@@ -18,10 +18,15 @@ const getAll = () => {
 const getUserFav = (users_id) => {
   return db.any(`SELECT * FROM quote WHERE users_id=$1 AND likes=true`,[users_id])
 }
+
+const like = (users_id,id) => {
+  return db.one(`UPDATE quote SET (likes) = (true) WHERE users_id=$1 and id=$2 `,[users_id,id])
+}
 module.exports ={
   create,
   deleteQuote,
   getByUserId,
   getAll,
-  getUserFav
+  getUserFav,
+  like
 }

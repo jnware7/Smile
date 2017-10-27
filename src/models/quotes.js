@@ -5,5 +5,6 @@ module.exports = {
   deleteQuote: db.deleteQuote,
   getByUserId: db.getByUserId,
   getAll: db.getAll,
-  getUserFav: db.getUserFav
+  getUserFav: db.getUserFav,
+  quote:db.quote
 }

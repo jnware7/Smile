@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
    quote.getAll()
   .then((allQuotes) => {
     shuffleQuotes(allQuotes)
-    res.render('home',{quote:allQuotes[0].quote, author:allQuotes[0].author})
+    res.render('home',{quote:allQuotes[0].quote, author:allQuotes[0].author, quote_id: allQuotes[0].id})
   })
 })
 // router.use((req, res, next) => {

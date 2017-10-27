@@ -11,11 +11,23 @@ $(".user-welcome").delay(500).fadeIn(4000);
 
 $(".home-quote2").hide()
 $(".home-author2").hide()
+$(".copyright").hide()
 
-$(".home-quote2").delay(6000).fadeIn(5000);
-$(".home-author2").delay(6000).fadeIn(5000);
+$(".home-quote2").delay(5000).fadeIn(5000);
+$(".home-author2").delay(5000).fadeIn(5000);
+$(".copyright").delay(6000).fadeIn(5000);
 
+const like = document.getElementById('heart-like')
 
+like.addEventListener('click', function() {
+  fetch('like',{
+    method: 'put',
+    headers:{'Content-Type' : 'application/json'},
+    body: JSON.stringify({
+      likes: true
+    })
+  })
+})
 
 // Bouncing Balls. By Rob Glazebrook
 // The balls are randomized in size, color, opacity, and bounce direction. They'll bounce off the walls of their container and generally make a rather pretty show of things.
