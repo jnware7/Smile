@@ -7,6 +7,7 @@
     "start": "node src/app.js",
     "start:dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "createdb smileapp && npm run load_schema",
     "db:reset": "dropdb smileapp && createdb smileapp && npm run load_schema",
     "load_schema": "psql -d smileapp < src/models/database/schema/schema.sql"
   },
