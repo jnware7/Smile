@@ -1,4 +1,4 @@
-const db = require('./database/quotes')
+const db = require('./database/quotes');
 
 module.exports = {
   create: db.create,
@@ -7,4 +7,4 @@ module.exports = {
   getAll: db.getAll,
   getUserFav: db.getUserFav,
   quote:db.quote
-}
+};

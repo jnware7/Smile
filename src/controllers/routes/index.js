@@ -2,7 +2,7 @@ const router = require('express').Router();
 const auth = require('./auth');
 const users = require('./users');
 const quotes = require('./quotes');
-const quote = require('../../models/quotes')
+const quote = require('../../models/quotes');
 
 var shuffleQuotes = function(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -21,16 +21,16 @@ var shuffleQuotes = function(array) {
   }
 
   return array[0];
-}
+};
 
 router.get('/', (req, res) => {
-   quote.getAll()
-  .then((allQuotes) => {
+  quote.getAll()
+    .then((allQuotes) => {
   
-    shuffleQuotes(allQuotes)
-    res.render('home',{quote:allQuotes[0].quote, author:allQuotes[0].author, quote_id: allQuotes[0].id})
-  })
-})
+      shuffleQuotes(allQuotes);
+      res.render('home',{quote:allQuotes[0].quote, author:allQuotes[0].author, quote_id: allQuotes[0].id});
+    });
+});
 // router.use((req, res, next) => {
 //
 //   if(typeof req.session.user === 'object' && Object.keys(req.session.user).length !== 0) {
@@ -42,8 +42,8 @@ router.get('/', (req, res) => {
 //   next()
 // });
 
-router.use('/quotes', quotes)
-router.use('/auth', auth)
-router.use('/users', users)
+router.use('/quotes', quotes);
+router.use('/auth', auth);
+router.use('/users', users);
 
-module.exports = router
+module.exports = router;

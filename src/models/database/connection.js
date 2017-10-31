@@ -16,4 +16,4 @@ const db = pgp(config);
 
 // db.query("select * from users").then(result => console.log("test db call: ", result))
 
-module.exports = db
+module.exports = db;
