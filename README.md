@@ -15,6 +15,8 @@ Next you'll want to get your server started:<br>
 
 And finally open a browser and navigate to http://localhost:3000
 
+<img width="1275" alt="screen shot 2018-01-24 at 1 48 27 pm" src="https://user-images.githubusercontent.com/20915359/35359103-af5d02c6-010d-11e8-9044-b79456915f6d.png">
+
 
 
 
