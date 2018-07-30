@@ -1,5 +1,5 @@
 ## Welcome to Smile!
-Smile is a social network that allows users to share and like quotes. 
+Smile is a social network built with Node.js using a Postrgres database that allows users to collect, like and share quotes.
 
 To start the app you'll need to install a few things and initialize the database. Lets start with the app itself which is located at:
 $ git clone https://github.com/jnware7/Smile.git
