@@ -1,4 +1,4 @@
-#Welcome to Smile!
+## Welcome to Smile!
 Smile is a social network that allows users to share and like quotes. 
 
 To start the app you'll need to install a few things and initialize the database. Lets start with the app itself which is located at:
