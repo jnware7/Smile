@@ -1,7 +1,7 @@
 #Welcome to Smile!
-Smile is a quote sharing platform that makes you smile. 
+Smile is a social network that allows users to share and like quotes. 
 
-To start the app you'll need to install a few things. Lets start with the app itself which is located at:
+To start the app you'll need to install a few things and initialize the database. Lets start with the app itself which is located at:
 $ git clone https://github.com/jnware7/Smile.git
 
 Next we'll add the dependencies: <br>
@@ -9,6 +9,12 @@ Next we'll add the dependencies: <br>
 
 After everything has been installed you'll need to initialize your database luckily we've written a script for that:<br>
 `$ npm run db:create`
+
+Now to load the schema:<br>
+`$ npm run load_schema`
+
+You can reset the database if need be with:<br>
+`$ npm run db:reset`
 
 Next you'll want to get your server started:<br>
 `$ npm start`
