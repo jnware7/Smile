@@ -3,7 +3,7 @@
    name VARCHAR(255) NOT NULL,
    password VARCHAR(255) NOT NULL,
    email VARCHAR(255) UNIQUE NOT NULL,
-   image VARCHAR(255) DEFAULT 'http://via.placeholder.com/250x250',
+   image TEXT DEFAULT 'http://via.placeholder.com/250x250',
    role VARCHAR(255) DEFAULT 'user'
  );
 
